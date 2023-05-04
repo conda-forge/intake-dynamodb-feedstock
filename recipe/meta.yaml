@@ -1,11 +1,11 @@
-{% set version = "2023.4.1" %}
+{% set version = "2023.5.0" %}
 package:
   name: intake-dynamodb
   version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/i/intake-dynamodb/intake-dynamodb-{{ version }}.tar.gz
-  sha256: f0d9905ed78f84cc9cea79358042b690deeccdc85ceaf016a31b27556979164f
+  sha256: 9d6bd78a007ec2026d99c79d2d803b39a6d3d074ee6a5ee1b2c4c4b144866836
 
 build:
   noarch: python
