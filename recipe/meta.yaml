@@ -4,20 +4,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/i/intake-dynamodb/intake-dynamodb-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/i/intake-dynamodb/intake-dynamodb-{{ version }}.tar.gz
   sha256: 9d6bd78a007ec2026d99c79d2d803b39a6d3d074ee6a5ee1b2c4c4b144866836
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vvv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - dask
     - intake
     - s3fs
@@ -29,6 +29,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/intake-dynamodb/intake-dynamodb
